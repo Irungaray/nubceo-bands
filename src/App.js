@@ -11,6 +11,7 @@ import "./styles/App.css";
 import ProtectedRoute from "./helpers/ProtectedRoute";
 import CommonRoute from "./helpers/CommonRoute";
 import BandsDashboard from "./Components/organisms/BandsDashboard/BandsDashboard";
+import Dashboard from "./Components/containers/Dashboard/Dashboard";
 
 const App = () => {
     const [isLogged, setIsLogged] = useState(true);
@@ -38,6 +39,12 @@ const App = () => {
                         exact
                         path="/"
                         component={<LoginForm setIsLogged={setIsLogged} />}
+                    />
+
+                    <CommonRoute
+                        exact
+                        path="/dash"
+                        component={<Dashboard />}
                     />
 
                     <CommonRoute path="*" component={<h1>Dirección no encontrada.</h1>} />
