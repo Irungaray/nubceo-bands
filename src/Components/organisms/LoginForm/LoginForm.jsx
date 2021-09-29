@@ -17,12 +17,11 @@ import PswInput from "../../atoms/PswInput/PswInput";
 import SwitchInput from "../../atoms/SwitchInput/SwitchInput";
 
 const LoginForm = (props) => {
-
-    const history = useHistory()
+    const history = useHistory();
 
     const [values, setValues] = useState({
-        username: "",
-        password: "",
+        username: "test",
+        password: "test1234",
         rememberMe: false,
     });
     const [err, setErr] = useState(false);
@@ -43,18 +42,14 @@ const LoginForm = (props) => {
         });
     };
 
-    const handleLogin = async (e) => {
+    const handleLogin = (e) => {
         e.preventDefault();
 
-        // const res = {status: 200}
-        const res = await login(
-            values.username,
-            values.password,
-            values.rememberMe
-        );
+        const res = login(values.username, values.password);
 
         if (res.status === 200) {
-            history.push("/transportes");
+            props.setIsLogged(true);
+            history.push("/bands");
         } else {
             setErr(true);
         }
@@ -97,7 +92,7 @@ const LoginForm = (props) => {
 };
 
 LoginForm.propTypes = {
-    setToken: PropTypes.func,
+    setIsLogged: PropTypes.func,
 };
 
 export default LoginForm;

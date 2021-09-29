@@ -10,6 +10,7 @@ import LoginForm from "./Components/organisms/LoginForm/LoginForm";
 import "./styles/App.css";
 import ProtectedRoute from "./helpers/ProtectedRoute";
 import CommonRoute from "./helpers/CommonRoute";
+import BandsDashboard from "./Components/organisms/BandsDashboard/BandsDashboard";
 
 const App = () => {
     const [isLogged, setIsLogged] = useState(false);
@@ -18,23 +19,25 @@ const App = () => {
         setIsLogged(false);
     };
 
+    console.log(isLogged);
+
     return (
         <>
             <Header isLogged={isLogged} onClick={handleLogout} />
 
             <Router>
                 <Switch>
-                    {/* <ProtectedRoute
+                    <ProtectedRoute
                         isLogged={isLogged}
                         exact
-                        path="/transportes"
-                        component={</>}
-                    /> */}
+                        path="/bands"
+                        component={<BandsDashboard />}
+                    />
 
                     <CommonRoute
                         exact
                         path="/"
-                        component={<LoginForm />}
+                        component={<LoginForm setIsLogged={setIsLogged} />}
                     />
 
                     <CommonRoute path="*" component={<h1>Not found</h1>} />
