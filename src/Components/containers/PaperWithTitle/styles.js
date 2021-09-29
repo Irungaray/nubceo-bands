@@ -5,28 +5,19 @@ export const useStyles = makeStyles((theme) => ({
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-            minHeight: "80vh",
-        // marginTop: theme.spacing(2),
-        marginBottom: theme.spacing(2)
+        minHeight: "80vh",
+        marginBottom: theme.spacing(2),
     },
-    // center: {
-    //     display: "flex",
-    //     justifyContent: "center",
-    //     minHeight: "80vh",
-    //     alignItems: "center",
-    // },
     paper: {
         padding: theme.spacing(4),
-        display: 'flex',
-        flexDirection: 'column',
-        // justifyContent: 'center',
-        // alignItems: 'center'
+        display: "flex",
+        flexDirection: "column",
     },
     title: {
-        marginBottom: theme.spacing(2)
+        marginBottom: theme.spacing(2),
     },
     form: {
         display: "flex",
-        flexDirection: 'column',
-    }
+        flexDirection: "column",
+    },
 }));

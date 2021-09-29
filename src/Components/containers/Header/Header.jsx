@@ -11,12 +11,17 @@ import { useStyles } from "./styles";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import LibraryMusicIcon from '@material-ui/icons/LibraryMusic';
 
+// External modules
+import { Link } from "react-router-dom";
+
 const Header = (props) => {
     const { container } = useStyles();
 
     return (
         <Container maxWidth="xl" className={container}>
-            <LibraryMusicIcon />
+            <Link to="/home">
+                <LibraryMusicIcon />
+            </Link>
 
             {props.isLogged && (
                 <Button onClick={props.onClick}>

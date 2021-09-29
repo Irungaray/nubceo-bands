@@ -2,13 +2,14 @@
 import { useState, useEffect } from "react";
 
 // External components
-import { Container, Paper, Typography } from "@material-ui/core";
+import { Button, Typography } from "@material-ui/core";
 
 // Internal modules
 import { getGenres, getBandsByGenre } from "../../../helpers/requests";
 
 // Internal components
 import Modal from "../../molecules/Modal/Modal";
+import CustomPaper from "../../containers/CustomPaper/CustomPaper";
 
 const GenresDashboard = () => {
     const [data, setData] = useState([]);
@@ -44,8 +45,6 @@ const GenresDashboard = () => {
         }
     };
 
-    console.log(selectedGenre);
-
     useEffect(() => {
         getInitialData();
     }, []);
@@ -57,26 +56,18 @@ const GenresDashboard = () => {
 
     return (
         <>
-            <Container>
-                <Paper
-                    elevation={5}
-                    style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "center",
-                    }}
-                >
-                    {data.map((slug) => (
-                        <Typography
-                            variant="h6"
-                            key={slug.code}
-                            onClick={() => handleClick(slug.code, slug.name)}
-                        >
+            <CustomPaper column>
+                {data.map((slug) => (
+                    <Button
+                        onClick={() => handleClick(slug.code, slug.name)}
+                        key={slug.code}
+                    >
+                        <Typography key={slug.code} variant="h6">
                             {slug.name}
                         </Typography>
-                    ))}
-                </Paper>
-            </Container>
+                    </Button>
+                ))}
+            </CustomPaper>
 
             {modalOpen && (
                 <Modal

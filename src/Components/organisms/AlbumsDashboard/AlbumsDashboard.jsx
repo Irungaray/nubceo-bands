@@ -2,7 +2,10 @@
 import { useState, useEffect } from "react";
 
 // External components
-import { Container, ListItemText, Paper } from "@material-ui/core";
+import { ListItemText } from "@material-ui/core";
+
+// Internal components
+import CustomPaper from "../../containers/CustomPaper/CustomPaper";
 
 // Internal modules
 import { getAlbums } from "../../../helpers/requests";
@@ -27,24 +30,13 @@ const AlbumsDashboard = () => {
     }, []);
 
     return (
-        <>
-            <Container>
-                <Paper
-                    elevation={5}
-                    style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "center",
-                    }}
-                >
-                    {data.map((album, index) => (
-                        <ListItemText key={index}>
-                            {album.name} - {album.year}
-                        </ListItemText>
-                    ))}
-                </Paper>
-            </Container>
-        </>
+        <CustomPaper column>
+            {data.map((album, index) => (
+                <ListItemText key={index}>
+                    {album.name} - {album.year}
+                </ListItemText>
+            ))}
+        </CustomPaper>
     );
 };
 

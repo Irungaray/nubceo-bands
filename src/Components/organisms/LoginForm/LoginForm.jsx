@@ -20,8 +20,8 @@ const LoginForm = (props) => {
     const history = useHistory();
 
     const [values, setValues] = useState({
-        username: "test",
-        password: "test1234",
+        username: "test" || "",
+        password: "test1234" || "",
         rememberMe: false,
     });
     const [err, setErr] = useState(false);
