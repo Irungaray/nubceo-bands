@@ -6,5 +6,8 @@ export const useStyles = makeStyles((theme) => ({
         flexDirection: "row",
         flexWrap: "wrap",
         justifyContent: "center"
+    },
+    container: {
+        marginTop: theme.spacing(2)
     }
 }));

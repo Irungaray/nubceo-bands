@@ -78,7 +78,7 @@ const LoginForm = (props) => {
                 label="Recuérdame"
             />
 
-            <Button variant="contained" color="primary" type="submit">
+            <Button variant="contained" color="primary" type="submit" autoFocus>
                 Ingresar
             </Button>
 

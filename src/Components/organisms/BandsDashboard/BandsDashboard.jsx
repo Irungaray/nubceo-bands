@@ -22,7 +22,8 @@ const BandsDashboard = (props) => {
     });
     const [modalOpen, setModalOpen] = useState(false);
 
-    const { paper } = useStyles();
+    const { container, paper } = useStyles();
+    const errMsg = "Error al obtener los datos, por favor recargue la página.";
 
     const getInitialData = async () => {
         const res = await getBands();
@@ -30,13 +31,9 @@ const BandsDashboard = (props) => {
         if (res.status === 200) {
             setData(res.data);
         } else {
-            alert("Error al obtener los datos, por favor recargue la página.");
+            alert(errMsg);
         }
     };
-
-    useEffect(() => {
-        getInitialData();
-    }, []);
 
     const handleCardClick = async (id, name) => {
         const res = await getBandAlbums(id);
@@ -48,9 +45,13 @@ const BandsDashboard = (props) => {
             });
             setModalOpen(true);
         } else {
-            alert("Error al obtener los datos, por favor recargue la página.");
+            alert(errMsg);
         }
     };
+
+    useEffect(() => {
+        getInitialData();
+    }, []);
 
     const handleCloseModal = () => {
         setModalOpen(false);
@@ -61,7 +62,7 @@ const BandsDashboard = (props) => {
 
     return (
         <>
-            <Container>
+            <Container className={container}>
                 <Paper elevation={5} className={paper}>
                     {data.map((slug) => (
                         <BandCard

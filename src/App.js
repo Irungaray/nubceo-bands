@@ -40,7 +40,7 @@ const App = () => {
                         component={<LoginForm setIsLogged={setIsLogged} />}
                     />
 
-                    <CommonRoute path="*" component={<h1>Not found</h1>} />
+                    <CommonRoute path="*" component={<h1>Dirección no encontrada.</h1>} />
                 </Switch>
             </Router>
         </>
