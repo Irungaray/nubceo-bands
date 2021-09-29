@@ -49,7 +49,7 @@ const LoginForm = (props) => {
 
         if (res.status === 200) {
             props.setIsLogged(true);
-            history.push("/bands");
+            history.push("/home");
         } else {
             setErr(true);
         }

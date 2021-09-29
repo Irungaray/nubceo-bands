@@ -42,3 +42,48 @@ export const getBandAlbums = async (id) => {
         return error.response;
     }
 }
+
+export const getAlbums = async () => {
+    try {
+        const res = await Axios(
+            {
+                method: "GET",
+                url: `${uri}/albums`,
+            },
+        )
+
+        return res;
+    } catch (error) {
+        return error.response;
+    }
+}
+
+export const getGenres = async () => {
+    try {
+        const res = await Axios(
+            {
+                method: "GET",
+                url: `${uri}/genre`,
+            },
+        )
+
+        return res;
+    } catch (error) {
+        return error.response;
+    }
+}
+
+export const getBandsByGenre = async (genre) => {
+    try {
+        const res = await Axios(
+            {
+                method: "GET",
+                url: `${uri}/bands?genreCode=${genre}`,
+            },
+        )
+
+        return res;
+    } catch (error) {
+        return error.response;
+    }
+}

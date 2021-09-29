@@ -1,7 +1,6 @@
 // External modules
 import { useState } from "react";
 import clsx from "clsx";
-import PropTypes from "prop-types";
 
 // External components
 import { Box, Container, Typography } from "@material-ui/core";
@@ -9,6 +8,8 @@ import { Box, Container, Typography } from "@material-ui/core";
 // Internal modules
 import { useStyles } from "./styles";
 import BandsDashboard from "../../organisms/BandsDashboard/BandsDashboard";
+import AlbumsDashboard from "../../organisms/AlbumsDashboard/AlbumsDashboard";
+import GenresDashboard from "../../organisms/GenresDashboard/GenresDashboard";
 
 const crumbs = [
     {
@@ -38,11 +39,11 @@ const Dashboard = (props) => {
             break;
 
         case breadcrumb === "albums":
-            currentDashboard = <h1>albums</h1>;
+            currentDashboard = <AlbumsDashboard />;
             break;
 
         case breadcrumb === "genres":
-            currentDashboard = <h1>generos</h1>;
+            currentDashboard = <GenresDashboard />;
             break;
 
         default:

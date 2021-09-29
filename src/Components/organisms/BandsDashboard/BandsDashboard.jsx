@@ -1,6 +1,5 @@
 // External modules
 import { useState, useEffect } from "react";
-import PropTypes from "prop-types";
 
 // External components
 import { Container, Paper } from "@material-ui/core";

@@ -1,5 +1,5 @@
 // External modules
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { BrowserRouter as Router, Switch } from "react-router-dom";
 
 // Internal components
@@ -14,7 +14,7 @@ import BandsDashboard from "./Components/organisms/BandsDashboard/BandsDashboard
 import Dashboard from "./Components/containers/Dashboard/Dashboard";
 
 const App = () => {
-    const [isLogged, setIsLogged] = useState(true);
+    const [isLogged, setIsLogged] = useState(false);
 
     const handleLogout = () => {
         setIsLogged(false);
@@ -31,20 +31,14 @@ const App = () => {
                     <ProtectedRoute
                         isLogged={isLogged}
                         exact
-                        path="/bands"
-                        component={<BandsDashboard />}
+                        path="/home"
+                        component={<Dashboard />}
                     />
 
                     <CommonRoute
                         exact
                         path="/"
                         component={<LoginForm setIsLogged={setIsLogged} />}
-                    />
-
-                    <CommonRoute
-                        exact
-                        path="/dash"
-                        component={<Dashboard />}
                     />
 
                     <CommonRoute path="*" component={<h1>Dirección no encontrada.</h1>} />
