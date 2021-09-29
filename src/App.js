@@ -13,7 +13,7 @@ import CommonRoute from "./helpers/CommonRoute";
 import BandsDashboard from "./Components/organisms/BandsDashboard/BandsDashboard";
 
 const App = () => {
-    const [isLogged, setIsLogged] = useState(false);
+    const [isLogged, setIsLogged] = useState(true);
 
     const handleLogout = () => {
         setIsLogged(false);

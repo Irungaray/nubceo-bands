@@ -13,12 +13,12 @@ import {
 
 const Modal = (props) => {
     return (
-        <Dialog open={props.open} onClose={props.handleClose}>
+        <Dialog open={props.open}>
             <DialogTitle>
                 {props.title}
 
                 <Button
-                    onClick={props.handleCancelButton}
+                    onClick={props.handleCloseButton}
                     color="default"
                     autoFocus
                 >
@@ -38,11 +38,8 @@ const Modal = (props) => {
 Modal.propTypes = {
     title: PropTypes.string,
     component: PropTypes.element,
-    cancelButtonText: PropTypes.string,
-    handleConfirmButton: PropTypes.func,
-    handleCancelButton: PropTypes.func,
+    handleCloseButton: PropTypes.func,
     open: PropTypes.bool,
-    handleClose: PropTypes.func,
 };
 
 export default Modal;

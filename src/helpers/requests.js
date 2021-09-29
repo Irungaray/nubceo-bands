@@ -27,3 +27,18 @@ export const getBands = async () => {
         return error.response;
     }
 }
+
+export const getBandAlbums = async (id) => {
+    try {
+        const res = await Axios(
+            {
+                method: "GET",
+                url: `${uri}/albums?bandId=${id}`,
+            },
+        )
+
+        return res;
+    } catch (error) {
+        return error.response;
+    }
+}
