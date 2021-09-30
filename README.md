@@ -20,7 +20,7 @@ If the login is successfull, we get redirected to `<Dashboard />`. Here, a switc
 - Loaders on API requests.
 - Better session management. Currently the session is stored on a state, so when the page is refreshed, the session is lost.
 - A lot of UI improvement. It would have been nice to have images for each band.
-
+- The codebase is entirely, although I decided to keep the UI in spanish. Turned out a bit weird.
 ## Run the project:
 > git clone https://github.com/Irungaray/nubceo-bands
 

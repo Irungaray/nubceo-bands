@@ -17,12 +17,12 @@ const crumbs = [
         label: "Bandas",
     },
     {
-        key: "albums",
-        label: "Albums",
-    },
-    {
         key: "genres",
         label: "Géneros",
+    },
+    {
+        key: "albums",
+        label: "Albums",
     },
 ];
 
@@ -38,12 +38,12 @@ const Dashboard = (props) => {
             currentDashboard = <BandsDashboard />;
             break;
 
-        case breadcrumb === "albums":
-            currentDashboard = <AlbumsDashboard />;
-            break;
-
         case breadcrumb === "genres":
             currentDashboard = <GenresDashboard />;
+            break;
+
+        case breadcrumb === "albums":
+            currentDashboard = <AlbumsDashboard />;
             break;
 
         default:
