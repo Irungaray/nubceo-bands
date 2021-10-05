@@ -1,5 +1,10 @@
 ## Tech stack:
+<<<<<<< HEAD
 - React.js (CRA)
+=======
+- React.js
+- React PropTypes
+>>>>>>> 78fc042e737fa970f7d5c2f5de12ec16aee9b4fa
 - Material UI
 - Axios
 
