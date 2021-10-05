@@ -1,5 +1,5 @@
 ## Tech stack:
-- React.js
+- React.js (CRA)
 - Material UI
 - Axios
 
@@ -12,7 +12,7 @@ If the login is successfull, we get redirected to `<Dashboard />`. Here, a switc
 
 `<BandsDashboard />` renders a series of cards with each band we get from the API. It displays band name, year, country and members. If a card is clicked on, it retrieves a modal with the band's albums.
 
-`<GenresDashboard />` renders a list of genres. If we click on a particular genre, it retrieves a modal the bands that are into it.
+`<GenresDashboard />` renders a list of genres. If we click on a particular genre, it retrieves a modal with the bands that are into it.
 
 `<AlbumDashboard />` renders a list of the album's endpoint. Not so interesting. It would be nice to have a search input, but there are so few albums that is not worth it.
 
@@ -20,6 +20,8 @@ If the login is successfull, we get redirected to `<Dashboard />`. Here, a switc
 - Loaders on API requests.
 - Better session management. Currently the session is stored on a state, so when the page is refreshed, the session is lost.
 - A lot of UI improvement. It would have been nice to have images for each band.
+- Toasts instead of alerts
+- Clicking on a breadcrumb, results in new API call. (fixable with useMemo?)
 - The codebase is entirely, although I decided to keep the UI in spanish. Turned out a bit weird.
 ## Run the project:
 > git clone https://github.com/Irungaray/nubceo-bands
