@@ -1,6 +1,6 @@
 import Axios from "axios";
 
-const uri = `${process.env.REACT_APP_URI}`;
+const uri = process.env.REACT_APP_URI;
 
 export const login = (username, password) => {
     const usrnm = "test"

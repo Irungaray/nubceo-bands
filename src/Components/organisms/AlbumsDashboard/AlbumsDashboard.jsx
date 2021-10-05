@@ -40,6 +40,4 @@ const AlbumsDashboard = () => {
     );
 };
 
-AlbumsDashboard.propTypes = {};
-
 export default AlbumsDashboard;

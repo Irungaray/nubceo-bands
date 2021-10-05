@@ -17,6 +17,10 @@ import { Link } from "react-router-dom";
 const Header = (props) => {
     const { container } = useStyles();
 
+    const handleLogout = () => {
+        props.setIsLogged(false);
+    };
+
     return (
         <Container maxWidth="xl" className={container}>
             <Link to="/home">
@@ -24,7 +28,7 @@ const Header = (props) => {
             </Link>
 
             {props.isLogged && (
-                <Button onClick={props.onClick}>
+                <Button onClick={handleLogout}>
                     <ExitToAppIcon />
                 </Button>
             )}
@@ -35,7 +39,8 @@ const Header = (props) => {
 };
 
 Header.propTypes = {
-    onClick: PropTypes.func,
+    isLogged: PropTypes.bool,
+    setIsLogged: PropTypes.func,
 };
 
 export default Header;

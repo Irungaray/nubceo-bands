@@ -10,7 +10,7 @@ import Modal from "../../molecules/Modal/Modal";
 import AlbumsCard from "../../molecules/AlbumsCard/AlbumsCard";
 import CustomPaper from "../../containers/CustomPaper/CustomPaper";
 
-const BandsDashboard = (props) => {
+const BandsDashboard = () => {
     const [data, setData] = useState([]);
     const [selectedBand, setSelectedBand] = useState({
         bandName: "",
@@ -55,7 +55,7 @@ const BandsDashboard = (props) => {
 
     return (
         <>
-            <CustomPaper columna>
+            <CustomPaper>
                 {data.map((slug) => (
                     <BandCard
                         key={slug.id}
@@ -79,7 +79,5 @@ const BandsDashboard = (props) => {
         </>
     );
 };
-
-BandsDashboard.propTypes = {};
 
 export default BandsDashboard;

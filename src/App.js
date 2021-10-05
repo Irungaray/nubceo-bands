@@ -15,13 +15,9 @@ import CommonRoute from "./helpers/CommonRoute";
 const App = () => {
     const [isLogged, setIsLogged] = useState(false);
 
-    const handleLogout = () => {
-        setIsLogged(false);
-    };
-
     return (
         <Router>
-            <Header isLogged={isLogged} onClick={handleLogout} />
+            <Header isLogged={isLogged} setIsLogged={setIsLogged} />
 
             <Switch>
                 <ProtectedRoute
